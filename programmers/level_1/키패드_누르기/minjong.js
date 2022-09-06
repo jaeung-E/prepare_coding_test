@@ -10,34 +10,35 @@ function solution(numbers, hand) {
   const leftPad = [1, 4, 7];
   const rightPad = [3, 6, 9];
 
-  let leftFinger = '*';
-  let rightFinger = '#';
+let leftFinger = keypad['*'];
+  let rightFinger = keypad['#'];
 
 
   for (const number of numbers) {
     if (leftPad.includes(number)) {
-      leftFinger = number;
+      leftFinger = keypad[number];
       answer += 'L';
     } else if (rightPad.includes(number)) {
-      rightFinger = number;
+      rightFinger = keypad[number];
       answer += 'R';
     } else {
-      const leftDistance = Math.abs(keypad[leftFinger][0] - keypad[number][0]) + Math.abs(keypad[leftFinger][1] - keypad[number][1]);
-      const rightDistance = Math.abs(keypad[rightFinger][0] - keypad[number][0]) + Math.abs(keypad[rightFinger][1] - keypad[number][1]);
+        const target = keypad[number];
+      const leftDistance = Math.abs(leftFinger[0] - target[0]) + Math.abs(leftFinger[1] - target[1]);
+      const rightDistance = Math.abs(rightFinger[0] - target[0]) + Math.abs(rightFinger[1] - target[1]);
 
       if (leftDistance < rightDistance) {
         answer += 'L';
-        leftFinger = number;
+        leftFinger = keypad[number];
       } else if (leftDistance > rightDistance) {
         answer += 'R';
-        rightFinger = number;
+        rightFinger = keypad[number];
       } else {
         if (hand[0] === 'l') {
           answer += 'L';
-          leftFinger = number;
+          leftFinger = keypad[number];
         } else {
           answer += 'R';
-          rightFinger = number;
+          rightFinger = keypad[number];
         }
       }
     }
