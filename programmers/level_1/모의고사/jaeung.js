@@ -1,39 +1,28 @@
 function solution(answers) {
   const answer = [];
-  const scores = [];
   const students = {
-    1: {
-      answer: [1, 2, 3, 4, 5],
-      score: 0,
-    },
-    2: {
-      answer: [2, 1, 2, 3, 2, 4, 2, 5],
-      score: 0,
-    },
-    3: {
-      answer: [3, 3, 1, 1, 2, 2, 4, 4, 5, 5],
-      score: 0,
-    },
+    1: [1, 2, 3, 4, 5],
+    2: [2, 1, 2, 3, 2, 4, 2, 5],
+    3: [3, 3, 1, 1, 2, 2, 4, 4, 5, 5],
   };
 
   for (const id in students) {
     const student = students[id];
+    let score = 0;
 
     answers.forEach((answer, idx) => {
-      const remainder = idx % student.answer.length;
+      const remainder = idx % student.length;
 
-      if (answer === student.answer[remainder]) student.score += 1;
+      if (answer === student[remainder]) score += 1;
     });
 
-    scores.push(student.score);
+    answer.push([id, score]);
   }
 
-  const max = Math.max(...scores);
+  const max = Math.max(...answer.map((arr) => arr[1]));
 
-  for (const id in students) {
-    const student = students[id];
-    if (student.score === max) answer.push(parseInt(id));
-  }
-
-  return answer.sort((a, b) => a - b);
+  return answer
+    .filter((arr) => arr[1] === max)
+    .map((arr) => parseInt(arr[0]))
+    .sort((a, b) => a - b);
 }
