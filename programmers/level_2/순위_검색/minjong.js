@@ -2,18 +2,16 @@
 
 // 기존 풀이 (효율성 통과 x)
 function solution(info, query) {
-  const database = {};
-
-  info = info.map((value, index) => {
+  info = info.map((value) => {
     const [lang, job, career, food, score] = value.split(' ');
-    database[index] = { lang, job, career, food, score };
+    return { lang, job, career, food, score };
   });
 
 
   return query.map((value) => {
     const [lang, job, career, food, score] = value.replaceAll(' and ', ' ').split(' ');
 
-    return Object.values(database).filter((row) => {
+    return info.filter((row) => {
       if (+score > +row.score) {
         return false;
       }
