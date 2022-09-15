@@ -1,3 +1,6 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/76502
+// 45min
+
 function solution(s) {
   let answer = 0;
   outer: for (let i = 0; i < s.length; i += 1) {
