@@ -1,3 +1,6 @@
+// https://www.acmicpc.net/problem/2579
+// over 2h
+
 const [N, ...stairs] = require('fs').readFileSync('../../input.txt', 'utf-8').trim().split('\n').map(Number);
 
 function solution(N, stairs) {
