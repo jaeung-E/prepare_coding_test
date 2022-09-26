@@ -12,10 +12,10 @@
 
 <br>
 
-# 이번 주 문제(DP 1주차) 💻
-- 설탕 배달
-- 계단 오르기
-- RGB 거리
+# 이번 주 문제(DP 2주차) 💻
+- [포도주 시식](https://www.acmicpc.net/problem/2156)
+- [평범한 배낭](https://www.acmicpc.net/problem/12865)
+- [전깃줄](https://www.acmicpc.net/problem/2565)
 
 <br>
 
