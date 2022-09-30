@@ -13,11 +13,10 @@ for (let i = 1; i <= N; i++) {
   const [weight, value] = knapsacks[i - 1];
 
   for (let j = 1; j <= maxWeight; j++) {
-    if (weight <= j) {
-      memo[i][j] = Math.max(value + memo[i - 1][j - weight], memo[i - 1][j]);
-    } else {
-      memo[i][j] = memo[i - 1][j];
-    }
+    memo[i][j] =
+      weight <= j
+        ? Math.max(value + memo[i - 1][j - weight], memo[i - 1][j])
+        : memo[i - 1][j];
   }
 }
 
