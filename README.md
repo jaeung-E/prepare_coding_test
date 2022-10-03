@@ -12,10 +12,10 @@
 
 <br>
 
-# 이번 주 문제(DP 2주차) 💻
-- [포도주 시식](https://www.acmicpc.net/problem/2156)
-- [평범한 배낭](https://www.acmicpc.net/problem/12865)
-- [전깃줄](https://www.acmicpc.net/problem/2565)
+# 이번 주 문제(BFS 1주차) 💻
+- [바이러스](https://www.acmicpc.net/problem/2606)
+- [촌수계산](https://www.acmicpc.net/problem/2644)
+- [나이트의 이동](https://www.acmicpc.net/problem/7562)
 
 <br>
 
