@@ -1,11 +1,11 @@
-function getInput() {
+const getInput = () => {
   const fs = require("fs");
   const input = fs.readFileSync("dev/stdin").toString().trim().split("\r\n");
 
   return input.map((str) => str.split(" ").map(Number));
-}
+};
 
-function solution(N, startNumber, endNumber, relations) {
+const solution = (N, startNumber, endNumber, relations) => {
   const familyTrees = Array.from(Array(N + 1), () => Array(N + 1).fill(0));
 
   relations.forEach(([start, end]) => {
@@ -14,9 +14,9 @@ function solution(N, startNumber, endNumber, relations) {
   });
 
   console.log(bfs(startNumber, endNumber, familyTrees));
-}
+};
 
-function bfs(startNumber, endNumber, familyTrees) {
+const bfs = (startNumber, endNumber, familyTrees) => {
   const visited = Array(N + 1).fill(false);
   const queue = [];
 
@@ -39,7 +39,7 @@ function bfs(startNumber, endNumber, familyTrees) {
   }
 
   return -1;
-}
+};
 
 const [[N], [startNumber, endNumber], _, ...relations] = getInput();
 solution(N, startNumber, endNumber, relations);
