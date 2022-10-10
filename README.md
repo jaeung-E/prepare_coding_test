@@ -12,10 +12,10 @@
 
 <br>
 
-# 이번 주 문제(BFS 1주차) 💻
-- [바이러스](https://www.acmicpc.net/problem/2606)
-- [촌수계산](https://www.acmicpc.net/problem/2644)
-- [나이트의 이동](https://www.acmicpc.net/problem/7562)
+# 이번 주 문제(BFS 2주차) 💻
+- [적록색약](https://www.acmicpc.net/problem/10026)
+- [아기 상어](https://www.acmicpc.net/problem/16236)
+- [구슬 탈출 2](https://www.acmicpc.net/problem/13460)
 
 <br>
 
