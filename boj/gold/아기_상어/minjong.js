@@ -20,7 +20,7 @@ function solution(N, graph) {
   const queue = [[x, y, 0]];
   visited[x][y] = true;
 
-  while (queue.length > 0 && findFish(graph, sharkSize)) {
+  while (queue.length > 0) {
     sortQueue(queue);
     const [x, y, time] = queue.shift();
 
@@ -69,15 +69,6 @@ function findShark(graph) {
       if (graph[x][y] === 9) return [x, y];
     }
   }
-}
-
-function findFish(graph, sharkSize) {
-  for (let x = 0; x < graph.length; x += 1) {
-    for (let y = 0; y < graph[x].length; y += 1) {
-      if (graph[x][y] !== 0 && graph[x][y] < sharkSize) return true
-    }
-  }
-  return false;
 }
 
 console.log(solution(N, graph));
