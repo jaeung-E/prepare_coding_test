@@ -55,7 +55,8 @@ function searchFeed(position, N, sharkSize, grids) {
 
   while (queue.length > 0) {
     const [x, y] = queue.shift();
-    const isFeed = grids[x][y] < sharkSize && grids[x][y] !== 0;
+    const isFeed =
+      grids[x][y] < sharkSize && grids[x][y] !== 0 && grids[x][y] !== 9;
 
     if (isFeed) {
       feedList.push([x, y, distance[x][y] - 1]);
