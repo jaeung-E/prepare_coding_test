@@ -12,10 +12,10 @@
 
 <br>
 
-# 이번 주 문제(BFS 2주차) 💻
-- [적록색약](https://www.acmicpc.net/problem/10026)
-- [아기 상어](https://www.acmicpc.net/problem/16236)
-- [구슬 탈출 2](https://www.acmicpc.net/problem/13460)
+# 이번 주 문제(DFS 1주차) 💻
+- [트리의 부모 찾기](https://www.acmicpc.net/problem/11725)
+- [나무 탈출](https://www.acmicpc.net/problem/15900)
+- [트리](https://www.acmicpc.net/problem/1068)
 
 <br>
 
