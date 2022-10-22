@@ -19,9 +19,14 @@ function solution(input) {
     nodes[b].push(a);
   }
 
-  loop: while (stack.length > 0) {
-    const [peek, depth] = stack[stack.length - 1];
-    const isLeafNode = nodes[peek].length === 1;
+  while (stack.length > 0) {
+    const [peek, depth] = stack.pop();
+    const isLeafNode = nodes[peek].length === 1 && peek !== 1;
+
+    if (isLeafNode) {
+      moveCount += depth;
+      continue;
+    }
 
     for (const node of nodes[peek]) {
       const isVisit = visited[node] === true;
@@ -29,15 +34,8 @@ function solution(input) {
       if (!isVisit) {
         stack.push([node, depth + 1]);
         visited[node] = true;
-        continue loop;
       }
     }
-
-    if (isLeafNode) {
-      moveCount += depth;
-    }
-
-    stack.pop();
   }
 
   const answer = moveCount % 2 === 0 ? "No" : "Yes";
