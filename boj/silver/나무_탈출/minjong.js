@@ -1,19 +1,20 @@
 // 시간 초과
 
-const [N, ...edge] = require('fs')
+const input = require('fs')
   .readFileSync(process.platform === 'linux' ? '/dev/stdin' : '../../input.txt', 'utf-8')
   .trim()
-  .split('\n')
-  .map(x => x.split(' ').map(Number));
+  .split('\n');
 
 
-function solution(N, edge) {
+function solution(input) {
+  const N = +input[0];
   const tree = Array.from({ length: N + 1 }, () => []);
 
-  edge.forEach(([src, dst]) => {
-    tree[src].push(dst);
-    tree[dst].push(src);
-  });
+  for (let i = 1; i< N; i += 1) {
+    const [src, dst] = input[i].split(' ');
+    tree[+src].push(+dst);
+    tree[+dst].push(+src);
+  };
 
   const visited = Array(N + 1).fill(false)
 
@@ -44,4 +45,4 @@ function dfs(start, tree, visited) {
   return leafDist % 2 === 0 ? 'No' : 'Yes';
 }
 
-console.log(solution(N, edge));
+console.log(solution(input));
