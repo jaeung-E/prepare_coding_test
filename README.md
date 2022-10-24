@@ -12,10 +12,10 @@
 
 <br>
 
-# 이번 주 문제(DFS 1주차) 💻
-- [트리의 부모 찾기](https://www.acmicpc.net/problem/11725)
-- [나무 탈출](https://www.acmicpc.net/problem/15900)
-- [트리](https://www.acmicpc.net/problem/1068)
+# 이번 주 문제(DFS 2주차) 💻
+- [Two Dots](https://www.acmicpc.net/problem/16929)
+- [트리의 지름](https://www.acmicpc.net/problem/1967)
+- [빵집](https://www.acmicpc.net/problem/3109)
 
 <br>
 
