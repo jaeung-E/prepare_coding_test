@@ -56,4 +56,4 @@ function checkBound(x, y, width, height) {
   return (x >= 0 && x < width && y >= 0 && y < height);
 }
 
-console.log(solution(input))
+console.log(solution(input));
