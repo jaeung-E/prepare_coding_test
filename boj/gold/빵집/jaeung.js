@@ -10,13 +10,13 @@ function solution(R, C, grids) {
   let pipeCount = 0;
 
   for (let x = 0; x < R; x++) {
-    if (searchLine(x, visited, grids)) pipeCount++;
+    if (isPlumbing(x, visited, grids)) pipeCount++;
   }
 
   return pipeCount;
 }
 
-function searchLine(x, visited, grids) {
+function isPlumbing(x, visited, grids) {
   const stack = [[x, 0]];
   const dx = [1, 0, -1];
   const dy = [1, 1, 1];
