@@ -13,6 +13,7 @@ function solution(input) {
 
   for (let x = 0; x < N; x += 1) {
     for (let y = 0; y < M; y += 1) {
+      visited[x][y] = true;
       dfs(x, y, x, y, 1, map, visited);
       if (isCycle) return 'Yes';
     }
@@ -26,7 +27,6 @@ function dfs(x, y, startX, startY, count, map, visited) {
   const height = map[0].length;
   const DX = [1, -1, 0, 0];
   const DY = [0, 0, -1, 1];
-  visited[startX][startY] = true;
 
   for (let i = 0; i < DX.length; i += 1) {
     const nx = x + DX[i];
