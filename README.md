@@ -13,9 +13,9 @@
 <br>
 
 # 이번 주 문제(DFS 2주차) 💻
-- [Two Dots](https://www.acmicpc.net/problem/16929)
-- [트리의 지름](https://www.acmicpc.net/problem/1967)
-- [빵집](https://www.acmicpc.net/problem/3109)
+- [N과 M(1)](https://www.acmicpc.net/problem/15649)
+- [스타트와 링크](https://www.acmicpc.net/problem/14889)
+- [부등호](https://www.acmicpc.net/problem/2529)
 
 <br>
 
