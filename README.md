@@ -12,7 +12,7 @@
 
 <br>
 
-# 이번 주 문제(DFS 2주차) 💻
+# 이번 주 문제(백트래킹 1주차) 💻
 - [N과 M(1)](https://www.acmicpc.net/problem/15649)
 - [스타트와 링크](https://www.acmicpc.net/problem/14889)
 - [부등호](https://www.acmicpc.net/problem/2529)
