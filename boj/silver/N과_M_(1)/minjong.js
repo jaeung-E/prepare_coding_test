@@ -29,7 +29,7 @@ function findSequence(start, length) {
       else visited[i] = true;
     }
 
-    if (sequence.length === M) {
+    if (sequence.length === length) {
       result.push(sequence.join(' '));
     }
 
