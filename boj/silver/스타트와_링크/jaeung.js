@@ -14,7 +14,7 @@ function solution(N, stats) {
     const teamLink = employee.filter((num) => !teamStart.includes(num));
     const overallStart = getTeamOverall(teamStart, stats);
     const overallLink = getTeamOverall(teamLink, stats);
-    const difference = Math.abs(overallStart, overallLink);
+    const difference = Math.abs(overallStart - overallLink);
 
     minDifference = Math.min(minDifference, difference);
   }
@@ -61,7 +61,6 @@ function getTeamOverall(team, stats) {
 
   for (let i = 0; i < team.length; i++) {
     for (let j = 0; j < team.length; j++) {
-      console.log(team, team[i] - 1, team[j] - 1);
       overall += stats[team[i] - 1][team[j] - 1];
     }
   }
