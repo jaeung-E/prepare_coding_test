@@ -21,7 +21,7 @@ function getDifferenceMinimum(length, depth, stats) {
     if (minDifference === 0) return 0;
 
     const sequence = stack.pop();
-    const max = Math.max(...sequence);
+    const max = sequence[sequence.length - 1];
 
     for (let i = 1; i <= length; i++) {
       visited[i] = i <= max ? true : false;
