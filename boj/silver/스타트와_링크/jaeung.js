@@ -34,10 +34,7 @@ function getDifferenceMinimum(length, depth, stats) {
     for (let i = length; i >= sequence[0]; i--) {
       const isVisit = visited[i] === true;
 
-      if (!isVisit) {
-        stack.push([...sequence, i]);
-        visited[i] = true;
-      }
+      if (!isVisit) stack.push([...sequence, i]);
     }
   }
 
