@@ -39,7 +39,6 @@ function permutation(length, depth) {
 
       if (!isVisit) {
         stack.push([...sequence, i]);
-        visited[i] = true;
       }
     }
   }
