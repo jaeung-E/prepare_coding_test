@@ -16,7 +16,6 @@ function solution(N, M) {
 function permutation(length, depth) {
   const result = [];
   const stack = [];
-  const visited = Array(N + 1).fill(false);
 
   for (let i = length; i >= 1; i--) {
     stack.push([i]);
@@ -24,10 +23,10 @@ function permutation(length, depth) {
 
   while (stack.length > 0) {
     const sequence = stack.pop();
+    const visited = Array(N + 1).fill(false);
 
-    for (let i = 1; i <= length; i++) {
-      const isVisit = sequence.includes(i) === true;
-      visited[i] = isVisit ? true : false;
+    for (let i = 0; i <= sequence.length; i++) {
+      visited[sequence[i]] = true;
     }
 
     if (sequence.length === depth) {
