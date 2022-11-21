@@ -2,7 +2,7 @@
 
 ### 문제 선정
 - 문제 유형은 격주로 선정
-- 문제 선정은 주 마다 월요일에 세 문제를 선정
+- 문제 선정은 주 마다 월요일에 두 문제를 선정
 
 ### 1주차
 실버 수준의 스탠다드 문제 세 문제
@@ -12,10 +12,9 @@
 
 <br>
 
-# 이번 주 문제(백트래킹 1주차) 💻
-- [N과 M(1)](https://www.acmicpc.net/problem/15649)
-- [스타트와 링크](https://www.acmicpc.net/problem/14889)
-- [부등호](https://www.acmicpc.net/problem/2529)
+# 이번 주 문제(백트래킹 2주차) 💻
+- [N-Queen](https://www.acmicpc.net/problem/9663)
+- [2048 (Easy)](https://www.acmicpc.net/problem/12100)
 
 <br>
 
@@ -39,7 +38,7 @@ ex)
 <br>
 
 ### PR
-- 세 문제 풀이 후, 금요일 까지 `main` 브랜치에 PR 등록
+- 두 문제 풀이 후, 주말 까지 `main` 브랜치에 PR 등록
 
 <br>
 
