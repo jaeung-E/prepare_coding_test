@@ -26,14 +26,14 @@ function solution(N) {
   return count;
 }
 
-function isPossible(board, col) {
+function isPossible(board, nextCol) {
   const nextRow = board.length + 1;
 
   for (let i = 0; i < board.length; i++) {
     const prevRow = i + 1;
     const prevCol = board[i];
-    const isSameCol = prevCol === col;
-    const isDiagonal = nextRow - prevRow === Math.abs(col - prevCol);
+    const isSameCol = prevCol === nextCol;
+    const isDiagonal = nextRow - prevRow === Math.abs(nextCol - prevCol);
 
     if (isSameCol || isDiagonal) return false;
   }
