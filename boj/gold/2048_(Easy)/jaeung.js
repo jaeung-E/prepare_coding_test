@@ -98,7 +98,7 @@ function moveBlock(option, array) {
 
           if (newBoard[column][y] === 0) {
             newBoard[column][y] = block;
-          } else if (newBoard[y][y] == block) {
+          } else if (newBoard[column][y] == block) {
             newBoard[column][y] *= 2;
             column--;
           } else {
