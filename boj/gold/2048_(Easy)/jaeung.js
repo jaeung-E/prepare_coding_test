@@ -39,18 +39,18 @@ function moveBlock(option, array) {
           }
         }
 
-        let column = 0;
+        let row = 0;
 
         while (queue.length > 0) {
           const block = queue.shift();
 
-          if (newBoard[column][y] === 0) {
-            newBoard[column][y] = block;
-          } else if (newBoard[column][y] === block) {
-            newBoard[column][y] *= 2;
-            column++;
+          if (newBoard[row][y] === 0) {
+            newBoard[row][y] = block;
+          } else if (newBoard[row][y] === block) {
+            newBoard[row][y] *= 2;
+            row++;
           } else {
-            newBoard[++column][y] = block;
+            newBoard[++row][y] = block;
           }
         }
       }
@@ -65,18 +65,18 @@ function moveBlock(option, array) {
           }
         }
 
-        let row = N - 1;
+        let col = N - 1;
 
         while (queue.length > 0) {
           const block = queue.shift();
 
-          if (newBoard[x][row] === 0) {
-            newBoard[x][row] = block;
-          } else if (newBoard[x][row] == block) {
-            newBoard[x][row] *= 2;
-            row--;
+          if (newBoard[x][col] === 0) {
+            newBoard[x][col] = block;
+          } else if (newBoard[x][col] == block) {
+            newBoard[x][col] *= 2;
+            col--;
           } else {
-            newBoard[x][--row] = block;
+            newBoard[x][--col] = block;
           }
         }
       }
@@ -91,18 +91,18 @@ function moveBlock(option, array) {
           }
         }
 
-        let column = N - 1;
+        let row = N - 1;
 
         while (queue.length > 0) {
           const block = queue.shift();
 
-          if (newBoard[column][y] === 0) {
-            newBoard[column][y] = block;
-          } else if (newBoard[column][y] == block) {
-            newBoard[column][y] *= 2;
-            column--;
+          if (newBoard[row][y] === 0) {
+            newBoard[row][y] = block;
+          } else if (newBoard[row][y] == block) {
+            newBoard[row][y] *= 2;
+            row--;
           } else {
-            newBoard[--column][y] = block;
+            newBoard[--row][y] = block;
           }
         }
       }
@@ -117,18 +117,18 @@ function moveBlock(option, array) {
           }
         }
 
-        let row = 0;
+        let col = 0;
 
         while (queue.length > 0) {
           const block = queue.shift();
 
-          if (newBoard[x][row] === 0) {
-            newBoard[x][row] = block;
-          } else if (newBoard[x][row] == block) {
-            newBoard[x][row] *= 2;
-            row++;
+          if (newBoard[x][col] === 0) {
+            newBoard[x][col] = block;
+          } else if (newBoard[x][col] == block) {
+            newBoard[x][col] *= 2;
+            col++;
           } else {
-            newBoard[x][++row] = block;
+            newBoard[x][++col] = block;
           }
         }
       }
