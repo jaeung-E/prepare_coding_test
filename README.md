@@ -12,9 +12,9 @@
 
 <br>
 
-# 이번 주 문제(백트래킹 2주차) 💻
-- [N-Queen](https://www.acmicpc.net/problem/9663)
-- [2048 (Easy)](https://www.acmicpc.net/problem/12100)
+# 이번 주 문제(다익스트라 1주차) 💻
+- [특정 거리의 도시](https://www.acmicpc.net/problem/18352)
+- [지름길](https://www.acmicpc.net/problem/1446)
 
 <br>
 
