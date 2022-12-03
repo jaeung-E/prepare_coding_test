@@ -1,21 +1,19 @@
 const fs = require("fs");
 const input = fs.readFileSync("dev/stdin").toString().trim().split("\r\n");
-const [[N, _, K, X], ...edge] = input.map((str) => str.split(" ").map(Number));
+const [N, M, K, X] = input[0].split(" ").map(Number);
 
 console.log(solution());
 
 function solution() {
-  const graph = Array.from({ length: N + 1 }, (_, i) =>
-    Array(N + 1).fill(Infinity)
-  );
+  const graph = {};
 
-  for (let i = 1; i <= N; i++) {
-    graph[i][i] = 0;
+  for (let i = 1; i <= M; i++) {
+    const [from, to] = input[i].split(" ");
+
+    if (!graph[from]) graph[from] = [];
+
+    graph[+from].push([+to, 1]);
   }
-
-  edge.forEach(([from, to]) => {
-    graph[from][to] = 1;
-  });
 
   const answer = dijkstra(X, graph);
 
@@ -23,23 +21,30 @@ function solution() {
 }
 
 function dijkstra(startNode, graph) {
-  const distance = [...graph[startNode]];
+  const distance = Array(N + 1).fill(Infinity);
   const visited = Array(N + 1).fill(false);
   let result = "";
+
+  graph[startNode].forEach(([node, weight]) => {
+    distance[node] = weight;
+  });
 
   visited[startNode] = true;
 
   while (true) {
-    const nextIndex = getMinIndex(distance, visited);
+    const nextIndex = getMinIndex(distance, visited, graph);
+    const arr = graph[nextIndex];
+
     visited[nextIndex] = true;
 
     if (nextIndex === 0) break;
 
-    for (let i = 1; i <= N; i++) {
-      const nextWeight = distance[nextIndex] + graph[nextIndex][i];
-      const isVisit = visited[i];
+    for (let i = 0; i < arr.length; i++) {
+      const [node, weight] = arr[i];
+      const nextWeight = distance[nextIndex] + weight;
+      const isVisit = visited[node];
 
-      if (nextWeight < distance[i] && !isVisit) distance[i] = nextWeight;
+      if (nextWeight < distance[node] && !isVisit) distance[node] = nextWeight;
     }
   }
 
@@ -50,12 +55,12 @@ function dijkstra(startNode, graph) {
   return result;
 }
 
-function getMinIndex(distance, visited) {
+function getMinIndex(distance, visited, graph) {
   let min = Infinity;
   let index = 0;
 
   for (let i = 1; i <= N; i++) {
-    if (distance[i] < min && !visited[i]) {
+    if (distance[i] < min && !visited[i] && graph[i]) {
       min = distance[i];
       index = i;
     }
