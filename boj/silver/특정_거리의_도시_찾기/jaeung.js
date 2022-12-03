@@ -1,6 +1,34 @@
 const fs = require("fs");
-const input = fs.readFileSync("dev/stdin").toString().trim().split("\r\n");
+const input = fs.readFileSync("dev/stdin").toString().trim().split("\n");
 const [N, M, K, X] = input[0].split(" ").map(Number);
+class Queue {
+  constructor() {
+    this.front = 0;
+    this.rear = 0;
+    this.storage = [];
+  }
+
+  size() {
+    return this.rear - this.front;
+  }
+
+  enqueue(value) {
+    this.storage[this.rear++] = value;
+  }
+
+  dequeue() {
+    const value = this.storage[this.front];
+    delete this.storage[this.front];
+
+    if (this.size() > 0) this.front++;
+
+    return value;
+  }
+
+  display() {
+    console.log([...this.storage]);
+  }
+}
 
 console.log(solution());
 
@@ -12,40 +40,32 @@ function solution() {
 
     if (!graph[from]) graph[from] = [];
 
-    graph[+from].push([+to, 1]);
+    graph[+from].push(+to);
   }
 
-  const answer = dijkstra(X, graph);
+  const answer = getDistance(X, graph);
 
-  return answer !== "" ? answer : -1;
+  return answer === "" ? -1 : answer;
 }
 
-function dijkstra(startNode, graph) {
-  const distance = Array(N + 1).fill(Infinity);
-  const visited = Array(N + 1).fill(false);
+function getDistance(startNode, graph) {
   let result = "";
+  const distance = Array(N + 1).fill(Infinity);
+  const queue = new Queue();
+  queue.enqueue(startNode);
 
-  graph[startNode].forEach(([node, weight]) => {
-    distance[node] = weight;
-  });
+  distance[startNode] = 0;
 
-  visited[startNode] = true;
+  while (queue.size() > 0) {
+    const node = queue.dequeue();
+    if (!graph[node]) continue;
 
-  while (true) {
-    const nextIndex = getMinIndex(distance, visited, graph);
-    const arr = graph[nextIndex];
-
-    visited[nextIndex] = true;
-
-    if (nextIndex === 0) break;
-
-    for (let i = 0; i < arr.length; i++) {
-      const [node, weight] = arr[i];
-      const nextWeight = distance[nextIndex] + weight;
-      const isVisit = visited[node];
-
-      if (nextWeight < distance[node] && !isVisit) distance[node] = nextWeight;
-    }
+    graph[node].forEach((nextNode) => {
+      if (distance[nextNode] === Infinity) {
+        distance[nextNode] = distance[node] + 1;
+        queue.enqueue(nextNode);
+      }
+    });
   }
 
   distance.forEach((value, index) => {
@@ -53,18 +73,4 @@ function dijkstra(startNode, graph) {
   });
 
   return result;
-}
-
-function getMinIndex(distance, visited, graph) {
-  let min = Infinity;
-  let index = 0;
-
-  for (let i = 1; i <= N; i++) {
-    if (distance[i] < min && !visited[i] && graph[i]) {
-      min = distance[i];
-      index = i;
-    }
-  }
-
-  return index;
 }
