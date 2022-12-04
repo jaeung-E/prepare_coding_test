@@ -1,5 +1,5 @@
 const fs = require("fs");
-const input = fs.readFileSync("dev/stdin").toString().trim().split("\r\n");
+const input = fs.readFileSync("dev/stdin").toString().trim().split("\n");
 const [[N, D], ...edge] = input.map((str) => str.split(" ").map(Number));
 
 console.log(solution());
@@ -30,8 +30,10 @@ function getMinDistance(graph) {
     if (i > 0) distance[i] = Math.min(distance[i], prevDistance + 1);
 
     graph[i].forEach(([nextDistance, weight]) => {
-      if (distance[nextDistance] > distance[i] + weight)
-        distance[nextDistance] = distance[i] + weight;
+      distance[nextDistance] = Math.min(
+        distance[nextDistance],
+        distance[i] + weight
+      );
     });
   }
 
