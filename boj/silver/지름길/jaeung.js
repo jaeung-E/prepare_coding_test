@@ -1,6 +1,6 @@
 const fs = require("fs");
 const input = fs.readFileSync("dev/stdin").toString().trim().split("\r\n");
-const [[N, D], ...distance] = input.map((str) => str.split(" ").map(Number));
+const [[N, D], ...edge] = input.map((str) => str.split(" ").map(Number));
 
 console.log(solution());
 
@@ -8,7 +8,7 @@ function solution() {
   const graph = Array.from({ length: D + 1 }, () => []);
 
   for (let i = 0; i < N; i++) {
-    const [from, to, weight] = distance[i];
+    const [from, to, weight] = edge[i];
 
     if (to > D) continue;
     if (to - from <= weight) continue;
