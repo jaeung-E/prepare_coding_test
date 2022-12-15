@@ -12,9 +12,9 @@
 
 <br>
 
-# 이번 주 문제(다익스트라 1주차) 💻
-- [특정 거리의 도시](https://www.acmicpc.net/problem/18352)
-- [지름길](https://www.acmicpc.net/problem/1446)
+# 이번 주 문제(다익스트라 2주차) 💻
+- [최소비용 구하기](https://www.acmicpc.net/problem/1916)
+- [파티](https://www.acmicpc.net/problem/1238)
 
 <br>
 
