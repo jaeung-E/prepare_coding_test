@@ -4,19 +4,19 @@ const [[N, M, X], ...routes] = input.map((str) => str.split(" ").map(Number));
 
 function solution() {
   const graph = Array.from({ length: N + 1 }, () => []);
-  const distance = {};
+  const reverseGraph = Array.from({ length: N + 1 }, () => []);
   let result = -Infinity;
 
   routes.forEach(([from, to, weight]) => {
     graph[from].push([to, weight]);
+    reverseGraph[to].push([from, weight]);
   });
 
-  for (let i = 1; i <= N; i++) {
-    distance[i] = dijkstra(i, graph);
-  }
+  const distanceToCity = dijkstra(X, graph);
+  const distanceToArrival = dijkstra(X, reverseGraph);
 
   for (let i = 1; i <= N; i++) {
-    result = Math.max(result, distance[i][X] + distance[X][i]);
+    result = Math.max(result, distanceToCity[i] + distanceToArrival[i]);
   }
 
   return result;
